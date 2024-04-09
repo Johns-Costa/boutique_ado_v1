@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+if os.path.isfile('env.py'):
+    import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -171,6 +173,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51OzGEcLNREj4OZLysnK7tieJ2s6FEt58rxAjdldRuwEikD0DpiMqkV5u1VKetf3BYJRs5AIDXL8YgtAeON2cEGEL00tpOCMzPQ')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51OzGEcLNREj4OZLyF6BsrbhxXRMTWSXRUSWn3wwXmxJrl6aCIGTTvidzCnc44yFKpRngf0rryXQxxJFDfdk5pM8E006DnQhJGD')
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', 'whsec_4CZJG3oxgXNfqgiAN7FscBOPleNiXQI3')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
