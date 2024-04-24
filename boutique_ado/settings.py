@@ -27,7 +27,9 @@ SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['qpv8w1c3-8000.euw.devtunnels.ms', 'localhost']
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 
 # Application definition
@@ -177,3 +179,4 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
+DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
